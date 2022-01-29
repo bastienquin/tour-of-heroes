@@ -1,0 +1,35 @@
+<div class="my-12 text-center text-4xl uppercase tracker-widest font-bold">
+    <h2>My Heroes</h2>
+</div>
+
+<div class="my-8 shadow-lg overflow-hidden border-gray-200 rounded-lg">
+
+    <table class="w-full divide-y divide-gray-700">
+        <thead class="bg-gray-900">
+            <tr>
+                <th scope="col" class="w-12 px-6 py-3 text-center text-xs font-medium text-gray-400 uppercase tracking-wider font-bold">ID</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider font-bold">Name</th>
+                <th scope="col" class="w-24 px-6 py-3 text-center text-xs font-medium text-gray-400 uppercase tracking-wider font-bold">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-700">
+            <tr *ngFor="let hero of heroes;let index = index;" class="{{index % 2 ? 'bg-gray-900' : 'bg-gray-800'}}">
+                <td class="px-6 py-3 whitespace-nowrap text-center font-bold">{{ hero.id }}</td>
+                <td class="px-6 py-3 whitespace-nowrap">{{ hero.name }}</td>
+                <td class="px-6 py-3 whitespace-nowrap text-center flex content-center justify-center">
+                    <a href="#" class="text-xs text-gray-400 hover:text-white duration-300 mx-2" (click)="onSelect(hero)">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--mdi-light" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M11.5 18c3.989 0 7.458-2.224 9.235-5.5A10.498 10.498 0 0 0 11.5 7a10.498 10.498 0 0 0-9.235 5.5A10.498 10.498 0 0 0 11.5 18zm0-12a11.5 11.5 0 0 1 10.36 6.5A11.5 11.5 0 0 1 11.5 19a11.5 11.5 0 0 1-10.36-6.5A11.5 11.5 0 0 1 11.5 6zm0 2a4.5 4.5 0 1 1 0 9a4.5 4.5 0 0 1 0-9zm0 1a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z" fill="currentColor"></path></svg>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="flex justify-center items-center cursor-pointer fixed z-10 inset-0 bg-gray-500 bg-opacity-75 transition-opacity" (click)="closeHeroDetails()" *ngIf="selectedHero">
+    <div class="w-full max-w-screen-sm bg-white rounded-lg p-8 m-4 text-gray-900 text-center shadow-xl transition-all h-40 cursor-default">
+        <h2 class="text font-bold uppercase text-xl mb-6">{{ selectedHero.name }} Details ({{ selectedHero.id }})</h2>
+        <input id="hero-name" [(ngModel)]="selectedHero.name" class="input text-center border border-gray-400 rounded w-48 px-4 py-2" type="text">
+    </div>
+</div>
