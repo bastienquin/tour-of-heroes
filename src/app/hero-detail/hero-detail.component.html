@@ -1,3 +1,12 @@
+<div class="my-12 text-center text-4xl uppercase tracker-widest font-bold">
+    <h2>Hero Details</h2>
+</div>
+
+<button (click)="goBack()" class="flex text-gray-400 hover:text-white duration-300 absolute top-28 h-8 leading-8">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--mdi-light mr-2" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19 13H6.75L12 18.25l-.664.75l-6.5-6.5l6.5-6.5l.664.75L6.75 12H19v1z" fill="currentColor"></path></svg>
+    Go back
+</button>
+
 <div *ngIf="selectedHero" class="flex mt-4">
     <div class="mr-8 w-16">
         <h2 class="text-bold mb-1">ID</h2>

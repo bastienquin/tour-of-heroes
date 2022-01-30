@@ -1,0 +1,9 @@
+<div class="my-12 text-center text-4xl uppercase tracker-widest font-bold">
+    <h2>Top Heroes</h2>
+</div>
+
+<div class="flex">
+    <a *ngFor="let hero of heroes" routerLink="/details/{{ hero.id }}" class="w-1/4 px-8 py-4 box-border m-4 bg-gray-900 text-center rounded-lg">
+        {{ hero.name }}
+    </a>
+</div>
