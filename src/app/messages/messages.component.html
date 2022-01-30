@@ -1,7 +1,7 @@
 <div *ngIf="messageService.messages.length">
 
     <div *ngFor='let message of messageService.messages' class="w-full rounded-lg my-4 bg-gray-900">
-        <div class="flex justify-between bg-lime-300 text-gray-900 rounded-t-lg px-4 py-2">
+        <div class="flex justify-between text-gray-900 rounded-t-lg px-4 py-2" [ngClass]="{'bg-lime-300': message.status === 'success', 'bg-red-600': message.status === 'error'}">
             <span class="text-sm font-bold">{{message.component}}</span>
             <div class="cursor-pointer" (click)="messageService.remove(message)">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 15.5l-10-10z"></path><path d="M15.5 5.5l-10 10"></path></g></svg>

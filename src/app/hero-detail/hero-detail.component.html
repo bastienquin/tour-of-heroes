@@ -12,8 +12,11 @@
         <h2 class="text-bold mb-1">ID</h2>
         <input id="hero-name" [(ngModel)]="selectedHero.id" class="border border-gray-400 rounded-lg w-full px-2 py-2 bg-gray-800 outline-none text-center" type="text">
     </div>
-    <div class="w-full">
+    <div class="mr-8 w-full">
         <h2 class="text-bold mb-1">NAME</h2>
         <input id="hero-name" [(ngModel)]="selectedHero.name" class="border border-gray-400 rounded-lg w-full px-4 py-2 bg-gray-800 outline-none" type="text">
+    </div>
+    <div class="w-24">
+        <button class="bg-gray-800 border border-gray-400 text-center rounded-lg px-4 py-2 mt-7 w-full text-gray-400 hover:text-white duration-300" (click)="save()">Save</button>
     </div>
 </div>
