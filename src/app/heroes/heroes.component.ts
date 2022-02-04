@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common'; 
 
 @Component({
     selector: 'app-heroes',
@@ -11,10 +13,11 @@ import { MessageService } from '../message.service';
 
 export class HeroesComponent {
 
-    constructor(private heroService: HeroService) {}
+    constructor(private heroService: HeroService, @Inject(DOCUMENT) document: any) {}
 
     ngOnInit(): void {
         this.getHeroes();
+        console.log(document.getElementById('heroes-title'));
     }      
 
     heroes: Hero[] = [];
